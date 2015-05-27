@@ -1,3 +1,5 @@
+# require 'kaminari'
+
 class Admin::UsersController < ApplicationController
 
 
@@ -10,6 +12,9 @@ class Admin::UsersController < ApplicationController
 
  def index
   @users = User.all
+  # @users = @users.page(1)
+  # @users = Kaminari.paginate_array(User.all).page(params[:page])
+ @users =  Kaminari.paginate_array(@users).page(params[:page]).per(2)
 end
 
 
