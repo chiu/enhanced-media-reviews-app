@@ -7,6 +7,9 @@ class Admin::UsersController < ApplicationController
  # before_filter :authorize
  before_filter :restrict_access
 
+  def show
+     @user = User.find(params[:id])
+  end
 
 
 
