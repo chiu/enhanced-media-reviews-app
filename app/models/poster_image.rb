@@ -6,5 +6,5 @@ class PosterImage < ActiveRecord::Base
 
     # attr_accessible :movie_id,:remote_image_url
   belongs_to :movie
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
 end
