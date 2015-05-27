@@ -34,6 +34,13 @@
     <%= f.text_area "description" %>
   </div>
   <div>
+     <p>
+    <label>My Avatar</label>
+    <%= f.file_field :avatar %>
+
+  </p>
+  </div>
+  <div>
     <%= f.submit "Submit" %> 
   </div>
 <% end %>
