@@ -21,7 +21,7 @@ class PosterImagesController < ApplicationController
 
    uploader.store!(   @poster_image.image )
 
-      binding.pry
+      # binding.pry
       redirect_to @movie, notice: "poster image created successfully"
     else
       render :new
