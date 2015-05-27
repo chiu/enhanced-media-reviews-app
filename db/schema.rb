@@ -26,9 +26,12 @@ ActiveRecord::Schema.define(version: 20150527023754) do
   end
 
   create_table "poster_images", force: true do |t|
+    t.integer  "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "poster_images", ["movie_id"], name: "index_poster_images_on_movie_id"
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id"

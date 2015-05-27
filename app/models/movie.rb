@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
 
   has_many :reviews
+  has_many :poster_images
 
   validates :title,
   presence: true

@@ -1,7 +1,12 @@
 RottenMangoes::Application.routes.draw do
   
+  # get "poster_images/index"
+  # get "poster_images/show"
+  # get "poster_images/new"
+  # get "poster_images/edit"
   resources :movies do
     resources :reviews, only: [:new, :create]
+    resources :poster_images, only: [:new, :create]
   end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
