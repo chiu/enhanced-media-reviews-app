@@ -12,6 +12,10 @@
 <% if current_user %>
   <% @movie.reviews.each do |review| %>
     <p><%= review.text %></p>
+
+
+<%= image_tag @movie.poster_images[0].image_url(:thumb) if @movie.poster_images[0].image? %>
+
     <p><%= review.rating_out_of_ten %>/10</p>
     <small>- <%= review.user.full_name %></small><br/>
   <% end %>

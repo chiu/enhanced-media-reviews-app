@@ -6,15 +6,23 @@ class PosterImagesController < ApplicationController
   def new
 
     @poster_image = @movie.poster_images.build
+
+    
+
     puts @poster_image.inspect
   end
 
   def create
     @poster_image = @movie.poster_images.build
-    @poster_image.user_id = current_user.id
+    # @poster_image.user_id = current_user.id
 
     if @poster_image.save
-      redirect_to @movie, notice: "Review created successfully"
+        uploader = ImageUploader.new
+
+   uploader.store!(   @poster_image.image )
+
+      binding.pry
+      redirect_to @movie, notice: "poster image created successfully"
     else
       render :new
     end
