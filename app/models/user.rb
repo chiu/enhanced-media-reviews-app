@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 
+  
   has_many :reviews
+
+
+  # paginates_per 2
 
   has_secure_password
 

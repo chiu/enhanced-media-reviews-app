@@ -1,3 +1,5 @@
+# require 'kaminari'
+
 class Admin::UsersController < ApplicationController
 
 
@@ -5,11 +7,17 @@ class Admin::UsersController < ApplicationController
  # before_filter :authorize
  before_filter :restrict_access
 
+  def show
+     @user = User.find(params[:id])
+  end
 
 
 
  def index
   @users = User.all
+  # @users = @users.page(1)
+  # @users = Kaminari.paginate_array(User.all).page(params[:page])
+ @users =  Kaminari.paginate_array(@users).page(params[:page]).per(2)
 end
 
 
