@@ -1,2 +1,6 @@
 <h1>PosterImages#show</h1>
 <p>Find me in app/views/poster_images/show.html.erb</p>
+
+
+
+<%= image_tag painting.image_url(:thumb) if painting.image? %>

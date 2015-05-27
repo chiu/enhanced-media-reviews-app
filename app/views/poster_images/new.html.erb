@@ -1,2 +1,17 @@
 <h1>PosterImages#new</h1>
 <p>Find me in app/views/poster_images/new.html.erb</p>
+
+
+<%= form_for([@movie, @poster_image]) do |f| %>
+  <%= f.hidden_field :movie_id %>
+ 
+  <p>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

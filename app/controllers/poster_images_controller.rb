@@ -4,7 +4,9 @@ class PosterImagesController < ApplicationController
   before_filter :load_movie
 
   def new
+
     @poster_image = @movie.poster_images.build
+    puts @poster_image.inspect
   end
 
   def create
