@@ -2,7 +2,26 @@
 
 <p>Add form here below</p>
 
+<%= form_tag movies_path, method: :get do %>
 
+
+  <p>
+    <label>Title</title>
+    <%= text_field_tag :user_title, params[:user_title] %>
+  </p>
+
+   <p>
+    <label>Director</title>
+    <%= text_field_tag :director %>
+  </p>
+
+
+ 
+  <p>
+    <%= submit_tag %>
+  </p>
+
+<% end %>
 
 
 
