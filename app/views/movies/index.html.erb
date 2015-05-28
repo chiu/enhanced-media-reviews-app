@@ -6,22 +6,31 @@
 
 
   <p>
-    <label>Title</title>
-    <%= text_field_tag :user_title, params[:user_title] %>
+  <label>Title</title>
+  <%= text_field_tag :user_title, params[:user_title] %>
   </p>
 
-   <p>
-    <label>Director</title>
-    <%= text_field_tag :user_director, params[:user_director] %>
-  </p>
-
-
- 
   <p>
-    <%= submit_tag %>
+  <label>Director</title>
+  <%= text_field_tag :user_director, params[:user_director] %>
   </p>
 
-<% end %>
+
+  <p>
+  runtime
+
+  <%= somehash = [] %>
+  <%=  somehash = [['Under 90f minutes', 1], ['Between 90 and 120 minutes', 2],  ['Over 120 minutes',3 ] ]%>
+  <%= select_tag(:runtime_number,  somehash)  %>
+
+  </p>
+
+
+  <p>
+  <%= submit_tag %>
+  </p>
+
+  <% end %>
 
 
 
