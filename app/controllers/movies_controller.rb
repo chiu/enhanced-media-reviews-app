@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all 
     @movies = @movies.where(title: params[:user_title]) if params[:user_title].present?
+     @movies = @movies.where(director: params[:user_director]) if params[:user_director].present?
   end
 
   def show
