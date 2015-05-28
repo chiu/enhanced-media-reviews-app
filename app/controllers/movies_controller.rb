@@ -6,7 +6,8 @@ class MoviesController < ApplicationController
     @movies = @movies.where(director: params[:user_director]) if params[:user_director].present?
 
     if params[:runtime_number].present?
-       case params[:runtime_number]
+      binding.pry
+       case params[:runtime_number].to_i
        when 1
         @movies = @movies.where(runtime_in_minutes: 0..90) 
           when 2
