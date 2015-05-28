@@ -5,32 +5,32 @@
 <%= form_tag movies_path, method: :get do %>
 
 
-  <p>
-  <label>Title</title>
+<p>
+  <label>Title</label>
   <%= text_field_tag :user_title, params[:user_title] %>
-  </p>
+</p>
 
-  <p>
-  <label>Director</title>
+<p>
+  <label>Director</label>
   <%= text_field_tag :user_director, params[:user_director] %>
-  </p>
+</p>
 
 
-  <p>
-  runtime
+<p>
+  <label> Time </label>
 
   <% somearray = [] %>
-  <% somearray = [['Under 90f minutes', 1], ['Between 90 and 120 minutes', 2],  ['Over 120 minutes',3 ] ]%>
+  <% somearray = [['any',4],['Under 90f minutes', 1], ['Between 90 and 120 minutes', 2],  ['Over 120 minutes',3 ] ]%>
   <%= select_tag(:runtime_number,  options_for_select(somearray))  %>
 
-  </p>
+</p>
 
 
-  <p>
+<p>
   <%= submit_tag %>
-  </p>
+</p>
 
-  <% end %>
+<% end %>
 
 
 
@@ -40,10 +40,10 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
-  <%= link_to image_tag(movie.avatar_url), movie_path(movie) %>
-  <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
-  <hr>
+<%= link_to image_tag(movie.avatar_url), movie_path(movie) %>
+<h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
+<h3><%= formatted_date(movie.release_date) %></h3>
+<h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+<p><%= movie.description %></p>
+<hr>
 <% end %>
