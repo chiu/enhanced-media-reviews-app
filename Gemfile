@@ -49,3 +49,6 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'kaminari'
+
+
+gem 'pry-byebug'
