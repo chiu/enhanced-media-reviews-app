@@ -7,3 +7,9 @@ will be updated with individual admin user info info
 <p>@user creation date: <%= @user.created_at %></p>
 <p>@user update date: <%= @user.updated_at %></p>
 <p>@user email: <%= @user.email %></p>
+
+<p> <%= link_to "this user edit", edit_admin_user_path(@user) %></p>
+
+
+
+<p> <%= link_to "destroy this user",  admin_user_path(@user), method: :delete, data: {confirm: "You sure?"} %> </p>
