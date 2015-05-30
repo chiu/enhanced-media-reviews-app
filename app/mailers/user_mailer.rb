@@ -37,4 +37,18 @@ class UserMailer < ActionMailer::Base
      template_name: 'welcome_email')
 
   end
+
+  def goodbye_email(user)
+    @user = user
+    @url  = 'http://example.com/login'
+    mail(to: @user.email,
+     subject: 'Welcome to My Awesome Site',
+     template_path: 'user_mailer',
+     template_name: 'goodbye_email')
+
+  end
+
+
+
+
 end
