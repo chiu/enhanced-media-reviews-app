@@ -25,28 +25,27 @@ class Movie < ActiveRecord::Base
   validate :release_date_is_in_the_future
 
 
-  scope :title, -> { where(title: params[:user_title])}
+  # scope :title, -> { where(title: params[:user_title])}
+  scope :search, ->(title) { where("title = ?", title) 
 
-  def review_average
-    if reviews.size != 0
-      reviews.sum(:rating_out_of_ten)/reviews.size
-    else
-      return 0
+
+
+    def review_average
+      if reviews.size != 0
+        reviews.sum(:rating_out_of_ten)/reviews.size
+      else
+        return 0
+      end
     end
-  end
 
-  protected
+    protected
 
-  def release_date_is_in_the_future
-    if release_date.present?
-      errors.add(:release_date, "should probably be in the future") if release_date < Date.today
+    def release_date_is_in_the_future
+      if release_date.present?
+        errors.add(:release_date, "should probably be in the future") if release_date < Date.today
+      end
     end
-  end
 
-
-  def search
 
 
   end
-
-end
