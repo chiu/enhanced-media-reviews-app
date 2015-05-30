@@ -1,6 +1,7 @@
 <footer>
   <small>
     <% if current_user %>
+   <% #binding.pry %>
       Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
       
         <p> Please <%= link_to "admin user panel", admin_users_path %> </p>
