@@ -1,0 +1,12 @@
+Searching 188 files for "sessions_path" (case sensitive)
+
+/Users/aardax/lighthouse/w5d2/enhanced_rotten_mangoes/enhanced_rotten_mangoes/app/views/sessions/new.html.erb:
+    1  <h1>Log In</h1>
+    2: <%= form_tag new_session_path do %>
+    3    <div>
+    4      <%= label_tag "email" %><br/>
+
+~/lighthouse/w5d2/enhanced_rotten_mangoes/enhanced_rotten_mangoes/log/development.log:
+    <binary>
+
+7 matches across 2 files

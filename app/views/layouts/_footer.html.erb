@@ -1,11 +1,13 @@
 <footer>
   <small>
     <% if current_user %>
-      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", "/session", method: :delete %>)
       
+
+
         <p> Please <%= link_to "admin user panel", admin_users_path %> </p>
     <% else %>
-      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+      <%= link_to "Log In", session_new_path %> | <%= link_to "Sign Up", new_user_path %>
     <% end %>
   </small>
 </footer>
