@@ -26,7 +26,7 @@ class Movie < ActiveRecord::Base
 
 
   # scope :title, -> { where(title: params[:user_title])}
-  scope :search, ->(title) { where("title = ?", title) 
+  # scope :search, ->(title) { where("title = ?", title) 
 
 
 
